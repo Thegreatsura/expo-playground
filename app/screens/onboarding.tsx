@@ -7,6 +7,7 @@ import useThemeColors from '../contexts/ThemeColors';
 import Feather from '@expo/vector-icons/Feather';
 import LottieView from 'lottie-react-native';
 import React from "react";
+import { shadowPresets } from "@/utils/useShadow";
 const { width } = Dimensions.get('window');
 const windowWidth = Dimensions.get('window').width;
 
@@ -80,13 +81,7 @@ export default function OnboardingScreen() {
 
                 <View className="w-full px-6 mb-global flex flex-col space-y-2">
                     <Pressable 
-                    style={{
-                        shadowColor: '#000',
-                        shadowOffset: { width: 0, height: 5 },
-                        shadowOpacity: 0.1,
-                        shadowRadius: 3.84,
-                        elevation: 5,
-                    }}
+                    style={shadowPresets.card}
                     className='w-full bg-white rounded-full flex flex-row items-center justify-center py-4'>
                         <Feather name="mail" size={20} color="black" />
                         <Text className='text-black ml-3'>Use email</Text>

@@ -5,6 +5,7 @@ import { BlurView } from 'expo-blur';
 import useThemeColors from '@/app/contexts/ThemeColors';
 import { useState, useRef } from 'react';
 import React from 'react';
+import { shadowPresets } from "@/utils/useShadow";
 
 type FeatherIconName = keyof typeof FeatherIcons.glyphMap;
 
@@ -24,13 +25,7 @@ export default function BottomBar({ showBackButton = false, title = '', hasAvata
     return (
         <View className='p-4 flex-row items-center justify-center'>
             <View 
-            style={{
-                elevation: 10,
-                shadowColor: 'black',
-                shadowOffset: { width: 0, height: 10 },
-                shadowOpacity: 0.3,
-                shadowRadius: 10,
-            }}
+            style={shadowPresets.card}
             className='rounded-full border border-white/20 '>
                 <BlurView tint='dark' intensity={10} className='flex-row py-1.5 px-1 w-[300px] overflow-hidden rounded-full items-center justify-between bg-black/50'>
                     <BottomBarItem 

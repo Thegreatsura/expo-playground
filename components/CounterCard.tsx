@@ -108,13 +108,13 @@ export default function CounterCard() {
     );
 }
 
-const Chip = (props: any) => {
+const Chip = ({ title, isActive, onPress }: { title: string; isActive: boolean; onPress: () => void }) => {
     return (
         <Pressable
-            className={`rounded-md px-3 py-1 ${props.isActive ? 'bg-secondary' : ''}`}
-            onPress={props.onPress}
+            className={`rounded-md px-3 py-1 ${isActive ? 'bg-secondary' : ''}`}
+            onPress={onPress}
         >
-            <Text className={`text-text text-xs ${props.isActive ? 'text-text' : ''}`}>{props.title}</Text>
+            <Text className={`text-text text-xs ${isActive ? 'text-text' : ''}`}>{title}</Text>
         </Pressable>
     );
 }

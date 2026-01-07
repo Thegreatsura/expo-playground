@@ -2,7 +2,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { View, Text, Pressable, Image, Animated, Easing } from 'react-native';
 import Feather from '@expo/vector-icons/Feather';
 import useThemeColors from '@/app/contexts/ThemeColors';
-
+import { shadowPresets } from "@/utils/useShadow";
 import React, { useState, useRef, useEffect } from 'react';
 
 interface JournalCardProps {
@@ -52,16 +52,8 @@ export default function JournalCard({ title, imageUrl, description, date = 'Wedn
         <>
             <Pressable
                 onPress={handlePress}
-                style={{
-                    //elevation: 10,
-                    shadowColor: '#000',
-                    shadowOffset: { width: 0, height: 5 },
-                    shadowOpacity: 0.07,
-                    shadowRadius: 6.84,
-                    borderRadius: 30,
-                    //paddingBottom: 100
-                }}
-                className=' bg-secondary overflow-hidden mb-global' >
+                style={shadowPresets.large}
+                className=' bg-secondary overflow-hidden mb-global rounded-2xl' >
                 <Animated.View
                     style={{ height: imageHeightAnim, borderTopLeftRadius: 20, borderTopRightRadius: 20 }}
                     className='w-full overflow-hidden'>

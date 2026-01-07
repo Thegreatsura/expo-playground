@@ -5,7 +5,7 @@ import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import Feather from '@expo/vector-icons/Feather';
 import { BlurView } from "expo-blur";
-
+import { shadowPresets } from "@/utils/useShadow";
 interface VideoCardProps {
     videoUrl: string;
     title: string;
@@ -88,13 +88,7 @@ export default function VideoCard({
 
     return (
         <Pressable
-            style={{
-                shadowColor: '#000',
-                shadowOffset: { width: 0, height: 5 },
-                shadowOpacity: 0.2,
-                shadowRadius: 3.84,
-                elevation: 5,
-            }}
+            style={shadowPresets.large}
             className="rounded-2xl mb-4"
             onPress={handleToggle}
         >

@@ -4,6 +4,7 @@ import useThemeColors from '../contexts/ThemeColors';
 import React, { useEffect, useRef, useState } from 'react';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Feather from '@expo/vector-icons/Feather';
+import { Feather as FeatherIcons } from '@expo/vector-icons';
 
 export default function WeatherScreen() {
     const insets = useSafeAreaInsets();
@@ -275,16 +276,22 @@ const DayMenu = ({ day, isActive, onPress }: { day: string; isActive: boolean; o
     )
 }
 
-const DayData = (props: any) => {
+interface DayDataProps {
+    icon: keyof typeof FeatherIcons.glyphMap;
+    data: string;
+    label: string;
+}
+
+const DayData = ({ icon, data, label }: DayDataProps) => {
     const colors = useThemeColors();
     return (
         <View className='flex-row justify-between items-center  w-2/3 py-2'>
             <View className='flex-row items-center w-[140px]'>
-                <Feather name={props.icon} size={17} color={colors.icon} strokeWidth={0.2} />
-                <Text className='text-sm font-semibold text-text ml-4'>{props.data}</Text>
+                <Feather name={icon} size={17} color={colors.icon} strokeWidth={0.2} />
+                <Text className='text-sm font-semibold text-text ml-4'>{data}</Text>
             </View>
             <View className='items-start flex-1'>
-                <Text className='text-xs w-full font-normal uppercase text-text opacity-50 text-left'>{props.label}</Text>
+                <Text className='text-xs w-full font-normal uppercase text-text opacity-50 text-left'>{label}</Text>
             </View>
         </View>
     )

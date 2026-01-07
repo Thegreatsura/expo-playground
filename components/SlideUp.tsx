@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { View, Image, Pressable, Text, Animated, Easing } from "react-native";
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import useThemeColors from "@/app/contexts/ThemeColors";
+import { shadowPresets } from "@/utils/useShadow";
 interface SlideUpProps {
     visible?: boolean;
     onClose?: () => void;
@@ -68,13 +69,7 @@ export default function SlideUp({ visible = true, onClose }: SlideUpProps) {
                 }}
             >
                 <View
-                    style={{
-                        shadowColor: '#000',
-                        shadowOffset: { width: 0, height: 5 },
-                        shadowOpacity: 0.1,
-                        shadowRadius: 3.84,
-                        elevation: 5,
-                    }}
+                    style={shadowPresets.large}
                     className="bg-text w-full rounded-3xl p-6 border border-border">
                     <View className="flex-col items-center justify-start p-6">
                         <Image source={require('@/assets/img/thomino.jpg')} className='w-16 h-16 rounded-full mb-2' />
