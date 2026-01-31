@@ -2,8 +2,8 @@
   "name": "playground",
   "version": "1.0.0",
   "scripts": {
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "start": "expo start",
     "prebuild": "expo prebuild",
     "lint": "eslint \"**/*.{js,jsx,ts,tsx}\" && prettier -c \"**/*.{js,jsx,ts,tsx,json}\"",
@@ -25,6 +25,7 @@
     "expo-navigation-bar": "~55.0.2",
     "expo-router": "~55.0.0-beta.3",
     "expo-status-bar": "~55.0.2",
+    "expo-symbols": "~55.0.2",
     "expo-system-ui": "~55.0.2",
     "expo-video": "~55.0.2",
     "lottie-react-native": "~7.3.1",
@@ -60,5 +61,10 @@
     "root": true
   },
   "main": "expo-router/entry",
-  "private": true
+  "private": true,
+  "reanimated": {
+    "staticFeatureFlags": {
+      "ENABLE_SHARED_ELEMENT_TRANSITIONS": true
+    }
+  }
 }

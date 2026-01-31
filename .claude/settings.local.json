@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx expo install:*)",
+      "Bash(npx expo-doctor)",
+      "Bash(npm install)",
+      "Bash(npx expo:*)",
+      "Bash(npm show:*)",
+      "Bash(npm install:*)",
+      "Bash(npm dedupe:*)",
+      "mcp__ide__getDiagnostics",
+      "WebFetch(domain:docs.swmansion.com)",
+      "WebSearch",
+      "Bash(sudo gem install:*)",
+      "Bash(brew install:*)",
+      "Bash(claude /install:*)"
+    ]
+  }
+}

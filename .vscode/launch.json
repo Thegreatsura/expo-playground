@@ -1,0 +1,34 @@
+{
+    "configurations": [
+        {
+            "name": "Radon IDE panel",
+            "type": "radon-ide",
+            "request": "launch",
+            "appRoot": "./",
+            "env": {},
+            "ios": {},
+            "android": {},
+            "usePrebuild": true
+        },
+        {
+            "name": "Radon IDE panel",
+            "type": "radon-ide",
+            "request": "launch",
+            "appRoot": "./",
+            "env": {},
+            "ios": {},
+            "android": {},
+            "usePrebuild": true
+        },
+        {
+            "name": "Radon IDE panel",
+            "type": "radon-ide",
+            "request": "launch",
+            "appRoot": "./",
+            "env": {},
+            "ios": {},
+            "android": {},
+            "usePrebuild": false
+        }
+    ]
+}
